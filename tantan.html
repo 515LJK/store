@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>商品详细</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header back-header clearfix">
+    <a href="#" class="header-back">
+        <i class="iconfont icon-jiantou-copy-L"></i>
+    </a>
+    ANNAN
+    <a href="#" class="header-shopCat">
+        <img src="image/shop-car.png" alt="">
+    </a>
+</header>
+<!-- header end -->
+<section class="myMessage clearfix">
+	<div class="section-opt clearfix">
+		<a href="#" title="">精品</a>
+		<a href="#" title="" class="active">探探</a>
+	</div>
+	<div class="tantan-swiper">
+	    <ul class="swiper-wrapper">
+	        <li class="swiper-slide tantan-detail-item">
+				<img src="image/good-detail.png" alt="">
+				<div class="good-wrap">
+					<p class="good-name">扇形珍珠钻石耳钉</p>
+					<p class="good-try">试戴：¥30/月</p>
+					<p class="good-price">单价：¥499</p>
+				</div>
+	        </li>
+	        <li class="swiper-slide tantan-detail-item">
+				<img src="image/good-detail.png" alt="">
+				<div class="good-wrap">
+					<p class="good-name">扇形珍珠钻石耳钉</p>
+					<p class="good-try">试戴：¥30/月</p>
+					<p class="good-price">单价：¥499</p>
+				</div>
+	        </li>
+	        <li class="swiper-slide tantan-detail-item">
+				<img src="image/good-detail.png" alt="">
+				<div class="good-wrap">
+					<p class="good-name">扇形珍珠钻石耳钉</p>
+					<p class="good-try">试戴：¥30/月</p>
+					<p class="good-price">单价：¥499</p>
+				</div>
+	        </li>
+	    </ul>
+	    <div class="tantan-block"></div>
+	    <div class="tantan-block"></div>
+    </div>
+    <div class="tantan-icon">
+    	<a href="#"><img src="image/refresh.png" alt=""></a>
+    	<a href="#"><img src="image/forlove.png" alt=""></a>
+    </div>
+</div>
+</body>
+<script>
+ 	/*swiper*/
+    var swiper = new Swiper('.tantan-swiper', {
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 14
+    });
+</script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>个人信息</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header back-header clearfix">
+    <a href="#" class="header-back">
+        <i class="iconfont icon-jiantou-copy-L"></i>
+    </a>
+    个人信息
+</header>
+<!-- header end -->
+<section class="section clearfix">
+    <form action="" class="personalM-form">
+        <ul class="pesonalM-wrapper">
+            <li class="personalM-item">
+                <span class="photo-text">头像</span>
+                <div class="clearfix">
+                    <div class="photo-cover">
+                        <img src="image/personM-img.png" alt="" class="personalM-photo">
+                        <input type="file" capture="camera" accept="image/*" class="photo-file" onchange="createImg(this)" name="personalImg">
+                    </div>
+                    <i class="iconfont icon-jiantou-R"></i>
+                </div>
+            </li>
+            <li class="personalM-item">
+               <span class="photo-text">昵称</span>
+               <div class="cleafix">
+                   <input type="text" value="诺斯娜Nosna" class="personalM-text" name="ID"> 
+                   <i class="iconfont icon-jiantou-R"></i>
+               </div>
+            </li>
+            <li class="personalM-item">
+               <span class="photo-text">性别</span>
+               <div class="cleafix">
+                    <select name="sex" class="personalM-text">
+                        <option value="0"></option>
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                   <i class="iconfont icon-jiantou-R"></i>
+               </div>
+            </li>
+            <li class="personalM-item">
+               <span class="photo-text">生日</span>
+               <div class="clearfix date-wrap">
+                  <div class="data-value"></div>
+                  <input type="date" class="personalM-text date" name="date"> 
+                  <i class="iconfont icon-jiantou-R"></i>
+               </div>
+            </li>
+            <li class="personalM-item">
+               <span class="photo-text">地址</span>
+               <div class="cleafix">
+                   <input type="text" class="personalM-text" name="ID"> 
+                   <i class="iconfont icon-jiantou-R"></i>
+               </div>
+            </li>
+        </ul>
+    </form>
+</section>
+</body>
+<script>
+    /*日历控制*/
+    var date = $('.date').get(0);
+    var dateValue = $('.data-value');
+
+    date.onchange = function(){
+        dateValue.html(date.value);
+    }
+
+    /*图片预览*/
+    var $Oimg = $('.personalM-photo')
+
+    function createImg(node){
+        var reader = new FileReader();   
+        reader.onload = function (e) {                                        
+            imgURL = e.target.result;
+            $Oimg.attr('src',imgURL)
+        };  
+        reader.readAsDataURL(node.files[0]); 
+    }
+</script>
+</html>

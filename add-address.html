@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>问题反馈</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form action="">
+<header class="header back-header clearfix">
+    <a href="#" class="header-back">
+        <i class="iconfont icon-jiantou-copy-L"></i>
+    </a>
+    添加新地址
+    <button type="submit" class="header-sumbit">
+        保存
+    </button>
+</header>
+<!-- header end -->
+<section class="myMessage addAddress clearfix">
+	<div class="WantBuy-item">
+        <p>收货人</p>
+        <div class="WantBuy-wrap clearfix">
+            <input type="text" name="" class="WantBuy-number left" value="小飞侠">
+        </div>
+    </div>
+    <div class="WantBuy-item">
+        <p>联系电话</p>
+        <div class="WantBuy-wrap clearfix">
+            <input type="number" name="" class="WantBuy-number left" value="1234567890">
+        </div>
+    </div>
+    <div class="WantBuy-item">
+        <p>退货数量</p>
+        <div class="WantBuy-wrap clearfix">
+            <select name="" class="WantBuy-select left">
+                <option value="0"></option>
+            </select>
+            <p class="right">请选择<i class="iconfont icon-jiantou-B"></i></p>
+        </div>
+    </div>
+    <textarea name="" placeholder="请填写详细地址，不少于5个字" class="feedback-text"></textarea>
+    <div class="WantBuy-item settings-btn">
+        <span class="aboutUs-text left">设为默认</span>
+        <div class="settings-button right"><span class="circle"></span></div>
+    </div>
+</section>
+</form>
+</body>
+<script>
+/*控制按钮*/
+   var $btn = $('.settings-button');
+   $btn.on('touchend',function(){
+       var onOff = $(this).get(0).classList.contains('active');
+
+       if(onOff){
+            $(this).get(0).classList.remove('active');  
+       }else{
+            $(this).get(0).classList.add('active');
+       }
+
+   });
+</script>
+</html>

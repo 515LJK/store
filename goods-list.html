@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>选择收货地址</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header back-header clearfix">
+    <a href="#" class="header-back">
+        <i class="iconfont icon-jiantou-copy-L"></i>
+    </a>
+    <form action="" class="index-form right good-search">  
+        <i class="iconfont icon-sousuo"></i>
+        <input type="search" class="index-search" value="镀金">
+    </form>
+    <a href="#" class="header-shopCat">
+        <img src="image/shop-car.png" alt="">
+    </a>
+</header>
+<!-- header end -->
+<section class="myMessage clearfix">
+    <div class="good-list-type">
+        <div class="good-list-item">
+            <span>品类</span>
+            <i class="iconfont icon-jiantou-B"></i>
+            <ul class="good-pull-list">
+                <li>
+                    <a href="#">项链</a>
+                </li>
+                <li>
+                    <a href="#">耳环</a>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="good-list-item">热门</a>
+        <div class="good-list-item">
+            <span>价格</span>
+            <i class="iconfont icon-jiantou-B"></i>
+            <ul class="good-pull-list">
+                <li>
+                    <a href="#">从高到低</a>
+                </li>
+                <li>
+                    <a href="#">从低到高</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="good-list clearfix">
+        <li class="good-item">
+            <img src="image/hostGood.png" alt="" class="good-item-img">
+            <p class="good-item-name">18k镀金皓石戒指</p>
+            <span class="good-item-price">¥999.0</span>
+            <span class="good-item-love active"></span>
+        </li>
+        <li class="good-item">
+            <img src="image/hostGood.png" alt="" class="good-item-img">
+            <p class="good-item-name">18k镀金皓石戒指</p>
+            <span class="good-item-price">¥999.0</span>
+            <span class="good-item-love"></span>
+        </li>
+        <li class="good-item">
+            <img src="image/hostGood.png" alt="" class="good-item-img">
+            <p class="good-item-name">18k镀金皓石戒指</p>
+            <span class="good-item-price">¥999.0</span>
+            <span class="good-item-love"></span>
+        </li>
+        <li class="good-item">
+            <img src="image/hostGood.png" alt="" class="good-item-img">
+            <p class="good-item-name">18k镀金皓石戒指</p>
+            <span class="good-item-price">¥999.0</span>
+            <span class="good-item-love"></span>
+        </li>
+        <li class="good-item">
+            <img src="image/hostGood.png" alt="" class="good-item-img">
+            <p class="good-item-name">18k镀金皓石戒指</p>
+            <span class="good-item-price">¥999.0</span>
+            <span class="good-item-love"></span>
+        </li>
+        <li class="good-item">
+            <img src="image/hostGood.png" alt="" class="good-item-img">
+            <p class="good-item-name">18k镀金皓石戒指</p>
+            <span class="good-item-price">¥999.0</span>
+            <span class="good-item-love"></span>
+        </li>
+    </ul>
+</section>
+</body>
+<script>
+   /*添加收藏*/
+   var Oheart = $('.good-item-love').get();
+
+   /*$Oheart.click(function(){
+        if(onOff){
+            $(this).addClass('active');
+        }else{
+            $(this).removeClass('active');
+        }
+        onOff = !onOff;
+   })*/
+
+    for( var i=0;i<Oheart.length;i++ ){
+        Oheart[i].onclick = function(){
+            if(this.classList.contains('active')){
+                this.classList.remove('active');
+            }else{
+                this.classList.add('active');
+            };
+        }
+    }
+
+    /*下拉框*/
+
+    (function(){
+
+        var $list = $('.good-list-item');
+
+        for( var i=0;i<$list.get().length;i++ ){
+            $list.get(i).onOff = true;
+        }
+
+        $list.click(function() {
+
+            if( $(this).get(0).onOff ){
+                $(this).find('.good-pull-list').stop(true).slideDown();
+            }else{
+                $(this).find('.good-pull-list').stop(true).slideUp();
+            }
+
+            $(this).get(0).onOff = !$(this).get(0).onOff;
+        
+        });
+
+    })();
+</script>
+</html>

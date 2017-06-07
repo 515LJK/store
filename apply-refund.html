@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>申请退款</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header back-header clearfix">
+	<a href="#" class="header-back">
+		<i class="iconfont icon-jiantou-copy-L"></i>
+	</a>
+	申请退款
+</header>
+<!-- header end -->
+<section class="myMessage apply-refund clearfix">
+	<form action="" class="WantBuy-form">
+		<div class="WantBuy-item">
+			<p>申请服务</p>
+			<div class="WantBuy-wrap clearfix">
+				<input type="number" name="" class="WantBuy-number left" placeholder="退货退款">
+			</div>
+		</div>
+		<div class="WantBuy-item">
+			<p>退货数量</p>
+			<div class="WantBuy-wrap clearfix">
+				<select name="" class="WantBuy-select left">
+					<option value="0">请选择退货数量</option>
+				</select>
+				<i class="iconfont icon-jiantou-B right"></i>
+			</div>
+		</div>
+		<div class="WantBuy-item">
+			<p>退货原因</p>
+			<div class="WantBuy-wrap clearfix">
+				<input type="number" name="" class="WantBuy-number left" placeholder="请填写退货原因">
+			</div>
+		</div>
+		<div class="WantBuy-item">
+			<p>退款金额</p>
+			<div class="WantBuy-wrap clearfix">
+				<div class="WantBuy-price">
+					¥<span>399</span>
+				</div>
+			</div>
+		</div>
+		<p class="alert">(最多399.00元，含试戴费29元）</p>
+		<div class="WantBuy-item">
+			<p>退货原因</p>
+			<div class="WantBuy-wrap clearfix">
+				<input type="number" name="" class="WantBuy-number left" placeholder="最多200字">
+			</div>
+		</div>
+		<div class="feedback-img clearfix">
+            <span id="showImg" class="left"></span>
+            <label class="feedback-add left" for="file">	<i class="iconfont icon-plus"></i>
+            	<p>上传凭证</p>
+            	<p>(最多三张)</p>
+            </label>
+            <input type="file" name="file" id="file" class="feedback-file" accept=".jpg,.jpeg,.png" onchange="showPreview(this,'showImg')"/>
+        </div>
+	</form>
+</section>
+<footer class="manage-goods-footer">
+	<a href="#" title="">
+		提交申请
+	</a>
+</footer>
+</body>
+<script>
+   /*上传前预览图片*/
+    function showPreview(source,obj) {
+        var file = source.files[0];
+        var show = document.getElementById(obj);
+        var Img = document.createElement("img");
+        if (window.FileReader) {
+            var fr = new FileReader();
+            if ($('#'+obj).find('img').length > 1) {
+                $('.feedback-add').hide();
+            }
+            show.appendChild(Img);
+            var imgs = document.getElementById(obj).querySelectorAll('img');
+            fr.onloadend = function (e) {
+                imgs[imgs.length - 1].src = e.target.result;
+            };
+            fr.readAsDataURL(file);
+        }
+    }
+</script>
+</html>

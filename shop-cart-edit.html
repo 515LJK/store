@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>购物车</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header back-header clearfix">
+    <a href="#" class="header-shopCat">
+        完成
+    </a>
+    购物车
+</header>
+<!-- header end -->
+<section class="section clearfix" style="margin-bottom:4.9rem">
+	<form action="">
+		<ul class="shopCart-list">
+			<li class="shopCart-list-item">
+				<input type="radio" name="radioName" class="shopCat-opt left" checked="true">
+				<img src="image/order.png" class="left">
+				<div class="shopCart-right left">
+					<p class="shopCart-title">18k镀金皓石戒指</p>
+					<p class="shopCart-color">颜色:玫瑰金,尺码:均码, 试戴:1个月</p>
+					<p class="shopCart-try">试戴费：¥ 30/月</p>
+					<p class="shopCart-money">押金：¥ 102</p>
+				</div>
+				<div class="shopCat-add">
+					<span class="minus">-</span>
+					<span class="num">1</span>
+					<span class="add">+</span>
+				</div>
+			</li>
+			<li class="shopCart-list-item">
+				<input type="radio" name="radioName" class="shopCat-opt left" checked="true">
+				<img src="image/order.png" class="left">
+				<div class="shopCart-right left">
+					<p class="shopCart-title">18k镀金皓石戒指</p>
+					<p class="shopCart-color">颜色:玫瑰金,尺码:均码, 试戴:1个月</p>
+					<p class="shopCart-try">试戴费：¥ 30/月</p>
+					<p class="shopCart-money">押金：¥ 102</p>
+				</div>
+				<div class="shopCat-add">
+					<span class="minus">-</span>
+					<span class="num">1</span>
+					<span class="add">+</span>
+				</div>
+			</li>
+		</ul>
+	</form>
+</section>
+<div class="shopCat-total clearfix">
+	<input type="radio" name="radioName" class="shopCat-opt left" checked="true">
+	<p class="left">全选</p>
+	<a href="#" title="" class="right">结算</a>
+	<a href="#" title="" class="right">收藏</a>
+	<a href="#" title="" class="right"><img src="image/rubblish.png"></a>
+</div>
+<footer class="footer">
+	<a href="#" title="" class="footer-item active">
+		<p>首页</p>
+	</a>
+	<a href="#" title="" class="footer-item">
+		<p>分类</p>
+	</a>
+	<a href="#" title="" class="footer-item">
+		<p>购物车</p>
+	</a>
+	<a href="#" title="" class="footer-item">
+		<p>我的</p>
+	</a>
+</footer>
+</body>
+<script>
+   /*购物车数量加减*/
+
+    var minus = $('.minus').get();
+   	var add = $('.add').get();
+   	var addNum = $('.num').get();
+
+
+   	for( var i=0;i<addNum.length;i++ ){
+   		addNum[i].num = 1;  //初始值
+   		minus[i].index = i;
+   		add[i].index = i;
+
+   		minus[i].onclick = function(){
+   			addNum[this.index].num--;
+   			addNum[this.index].num = addNum[this.index].num<=0?0:addNum[this.index].num; //最小商品数量不少于0;
+   			addNum[this.index].value = addNum[this.index].num;
+   		}
+
+   		add[i].onclick = function(){
+   			addNum[this.index].num++;
+   			addNum[this.index].num = addNum[this.index].num>10?10:addNum[this.index].num; ////设置最大商品数量
+   			addNum[this.index].value = addNum[this.index].num;
+   		}
+
+   	}
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>订单</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color:#f5f5f5">
+<header class="header back-header clearfix">
+	<a href="#" class="header-back">
+		<i class="iconfont icon-jiantou-copy-L"></i>
+	</a>
+	订单
+</header>
+<!-- header end -->
+<!-- section -->
+<section class="section order-section">
+	<div class="order-opt clearfix">
+		<a href="#" title="">全部</a>
+		<a href="#" title="" class="active">待付款</a>
+		<a href="#" title="">待发货</a>
+		<a href="#" title="">待收货</a>
+		<a href="#" title="">已收货</a>
+	</div>
+	<div class="line"></div>
+	<div class="order-number clearfix">
+		<p class="left">订单编号：100000279</p>
+		<span class="right">待付款</span>
+	</div>
+	<ul class="orders-list">
+		<li class="order-list-item clearfix">
+			<img src="image/order.png" class="left">
+			<div class="order-right left">
+				<p class="order-title">18k镀金皓石戒指</p>
+				<p class="order-detail">颜色:玫瑰金,尺码:均码, 试戴:1个月</p>
+				<p class="order-price">
+					<span>押金:¥399</span>
+					<span>试戴费:¥29</span>
+					<span class="right">x1</span>
+				</p>
+			</div>
+		</li>
+		<li class="order-list-item clearfix">
+			<img src="image/order.png" class="left">
+			<div class="order-right left">
+				<p class="order-title">18k镀金皓石戒指</p>
+				<p class="order-detail">颜色:玫瑰金,尺码:均码, 试戴:1个月</p>
+				<p class="order-price">
+					<span>押金:¥399</span>
+					<span>试戴费:¥29</span>
+					<span class="right">x1</span>
+				</p>
+			</div>
+		</li>
+	</ul>
+	<div class="order-total clearfix">
+		<span>含试戴费:¥ 58</span>
+		<span>总价:¥ 998</span>
+	</div>
+	<div class="order-behavior clearfix">
+		<span class="pay right">去付款</span>
+		<span class="cancel right">取消订单</span>
+	</div>
+</section>
+<p class="more-remind">点击或上拉加载更多</p>
+<!-- section end-->
+</body>
+<script>
+$(function(){
+	
+
+});
+</script>
+</html>

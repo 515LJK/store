@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>选择收货地址</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form action="">
+<header class="header back-header clearfix">
+    <a href="#" class="header-back">
+        <i class="iconfont icon-jiantou-copy-L"></i>
+    </a>
+    我的还贷
+    <button type="submit" class="header-sumbit">
+        提交
+    </button>
+</header>
+<!-- header end -->
+<section class="section clearfix">
+    <div class="feedback-evalute clearfix">
+        <img src="image/evaluateShow.png" alt="" class="left" />
+        <p class="left">
+            <span>商品评分</span>
+            <strong class="evalute">
+                <i class="iconfont icon-xingxing1"></i>
+                <i class="iconfont icon-xingxing1"></i>
+                <i class="iconfont icon-xingxing1"></i>
+                <i class="iconfont icon-xingxing"></i>
+                <i class="iconfont icon-xingxing"></i>
+            </strong>
+            <input type="hidden" name="starCount" class="starCount">
+        </p>    
+    </div>
+	<div class="feedback">
+        <textarea name="" placeholder="饰品质量好吗？上身效果咋么养？给其他想买都小伙伴做个参考呗" class="feedback-text"></textarea>
+        <div class="feedback-img clearfix">
+            <span id="showImg" class="left clearfix">
+            </span>
+            <label class="feedback-add none left" for="file"><p><img src="image/photo.png" alt=""></p><span>0/9</span></label>
+            <input type="file" name="file" id="file" class="feedback-file" accept=".jpg,.jpeg,.png" onchange="showPreview(this,'showImg')"/>
+        </div>
+    </div>
+</section>
+</form>
+</body>
+<script>
+   /*上传前预览图片*/
+    function showPreview(source,obj) {
+        var file = source.files[0];
+        var show = document.getElementById(obj);
+        var Img  = document.createElement("div");
+        Img.className = 'showImg-wapper left';
+        var Cimg = document.createElement("img");
+        var Cspan = document.createElement("span");
+        Cspan.className = 'deleteImg';
+        Img.appendChild(Cimg);
+        Img.appendChild(Cspan); 
+        var $Onum = $('.feedback-add').find('span');
+        if (window.FileReader) {
+            var fr = new FileReader();
+            var ImgNum = $('#'+obj).find('img').length;
+            if ( ImgNum > 7) {
+                $('.feedback-add').hide();
+            }
+            ImgNum = ImgNum+1;
+            $Onum.get(0).innerHTML = ''+ImgNum+'/9';
+            show.appendChild(Img,show.children[0]);
+            var imgs = document.getElementById(obj).querySelectorAll('img');
+            fr.onloadend = function (e) {
+                imgs[imgs.length - 1].src = e.target.result;
+            };
+            fr.readAsDataURL(file);
+
+            /*图片点击删除*/
+            var showImg = $('.showImg-wapper').get();
+
+            for( var i=0;i<showImg.length;i++ ){
+                showImg[i].index = i;
+                showImg[i].onclick = function(){
+                    if(confirm("是否删除图片？")){
+                        $(this).remove();
+                        ImgNum = ImgNum-1;
+                        $Onum.get(0).innerHTML = ''+ImgNum+'/9';
+                    }else{
+                        return;
+                    }
+
+                    if ($(showImg).find('img').length <= 7) {
+                        $('.feedback-add').show();
+                    };
+                };
+            };
+        };
+    };
+
+    /*星星评价*/
+    var Ostar = $('.evalute').find('i').get();
+    var $starCount = $('.starCount');
+
+    for( var i=0;i<Ostar.length;i++ ){
+        Ostar[i].index = i;
+        Ostar[i].onclick = function(){
+            for( var g =0;g<Ostar.length;g++ ){
+                Ostar[g].className = 'iconfont icon-xingxing';
+            }
+            for( var j=0;j<=this.index;j++ ){
+                Ostar[j].className = "iconfont icon-xingxing1";
+            }
+            $starCount.attr('value',this.index+1)
+        }
+    }
+    
+</script>
+</html>

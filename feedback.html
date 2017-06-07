@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>问题反馈</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form action="">
+<header class="header back-header clearfix">
+    <a href="#" class="header-back">
+        <i class="iconfont icon-jiantou-copy-L"></i>
+    </a>
+    常见问题
+    <button type="submit" class="header-sumbit">
+        提交
+    </button>
+</header>
+<!-- header end -->
+<section class="section clearfix">
+	<div class="feedback">
+        <textarea name="" placeholder="请出入反馈意见，我们会以消息形式回复您的建议或意见，
+改进产品体验，谢谢!" class="feedback-text"></textarea>
+        <div class="feedback-img clearfix">
+            <span id="showImg" class="left"></span>
+            <label class="feedback-add left" for="file"><i class="iconfont icon-plus"></i></label>
+            <input type="file" name="file" id="file" class="feedback-file" accept=".jpg,.jpeg,.png" onchange="showPreview(this,'showImg')"/>
+        </div>
+    </div>
+</section>
+</form>
+</body>
+<script>
+   /*上传前预览图片*/
+    function showPreview(source,obj) {
+        var file = source.files[0];
+        var show = document.getElementById(obj);
+        var Img = document.createElement("img");
+        if (window.FileReader) {
+            var fr = new FileReader();
+            if ($('#'+obj).find('img').length > 1) {
+                $('.feedback-add').hide();
+            }
+            show.appendChild(Img);
+            var imgs = document.getElementById(obj).querySelectorAll('img');
+            fr.onloadend = function (e) {
+                imgs[imgs.length - 1].src = e.target.result;
+            };
+            fr.readAsDataURL(file);
+        }
+    }
+</script>
+</html>

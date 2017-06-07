@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jonas">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>产品分类</title>
+     <script src="js/jquery-1.11.3.min.js"></script>
+     <!-- 初始化页面 -->
+    <script src="js/common.js"></script>
+    <!-- 初始化页面 -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header index-header classify clearfix">
+    <a href="#"><img src="image/shousuo.png" class="index-sousuo" alt=""></a>
+    产品分类
+</header>
+<!-- header end -->
+<section class="section classify-section clearfix">
+    <div class="classify-left left">
+        <ul class="classify-list">
+            <li class="classify-list-item active">
+                <p class="classify-text">全部<i class="iconfont icon-jiantou-R"></i></p>
+            </li>
+            <li class="classify-list-item">
+                <p class="classify-text">风格<i class="iconfont icon-jiantou-R"></i></p>
+            </li>
+            <li class="classify-list-item">
+                <p class="classify-text">材质<i class="iconfont icon-jiantou-R"></i></p>
+            </li>
+            <li class="classify-list-item">
+                <p class="classify-text">元素<i class="iconfont icon-jiantou-R"></i></p>
+            </li>
+            <li class="classify-list-item">
+                <p class="classify-text">新品<i class="iconfont icon-jiantou-R"></i></p>
+            </li>
+        </ul>
+    </div>
+    <div class="classify-right left">
+        <div class="classify-part clearfix">
+            <div class="classify-part-left left clearfix">
+                <img src="image/classify1.png" class="left">
+                <span class="left">手镯</span>
+            </div>
+            <div class="classify-part-right left">
+                <a href="#" class="part-right-item">手链</a>
+                <a href="#" class="part-right-item">手镯</a>
+                <a href="#" class="part-right-item">手串</a>
+            </div>
+        </div>
+        <div class="classify-part clearfix">
+            <div class="classify-part-left left clearfix">
+                <img src="image/classify1.png" class="left">
+                <span class="left">手镯</span>
+            </div>
+            <div class="classify-part-right left">
+                <a href="#" class="part-right-item">手链</a>
+                <a href="#" class="part-right-item">手镯</a>
+                <a href="#" class="part-right-item">手串</a>
+            </div>
+        </div>
+        <div class="classify-part clearfix">
+            <div class="classify-part-left left clearfix">
+                <img src="image/classify1.png" class="left">
+                <span class="left">手镯</span>
+            </div>
+            <div class="classify-part-right left">
+                <a href="#" class="part-right-item">手链</a>
+                <a href="#" class="part-right-item">手镯</a>
+                <a href="#" class="part-right-item">手串</a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+	<a href="#" title="" class="footer-item active">
+		<p>首页</p>
+	</a>
+	<a href="#" title="" class="footer-item">
+		<p>分类</p>
+	</a>
+	<a href="#" title="" class="footer-item">
+		<p>购物车</p>
+	</a>
+	<a href="#" title="" class="footer-item">
+		<p>我的</p>
+	</a>
+</footer>
+</body>
+<script>
+$(function(){
+
+    /*控制选项居中*/
+    var Oh = 0;
+    var OH = 0;
+    var h = 0;
+    var classifyPart = $('.classify-part').get();
+    var classifyLeft = $('.classify-part-left').get();
+
+    for(var i=0;i<classifyPart.length;i++){
+        Oh = $(classifyPart[i]).innerHeight();
+        OH = $(classifyLeft[i]).innerHeight();
+        h = (Oh/2 - OH)/20 - 0.4;
+        $(classifyLeft[i]).css('marginTop',h+'rem');
+    };
+
+    /*左侧边栏切换*/
+
+    $('.classify-list').on('click','li',function(){
+        $('.classify-list-item').removeClass('active');
+        $(this).addClass('active');
+    })
+
+});
+</script>
+</html>
